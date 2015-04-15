@@ -4,7 +4,7 @@ var crypto = require('crypto');
 
 var router = express.Router();
 
-var TOKEN = 'VwiIlpSn7_espo3l2N0C_fbykdjwrWL6Y7N76x1kkF0Lk1X3EGnPuwJDQqxeu58O2-QpmAjh39I9p4BM859Ku2WDPHJQ3h4llbJbXVBqN3E';
+var TOKEN = 'oYHD3dCTE6ApO4e1NXaTxj1-eNgLe7jQIwSH04DvR6XkoQEdNtKLN0jMMgWDjMbUhrFMRUOu55vU7tPB2y3muu0NIZEjxqD08fr_zH_tpyM';
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
