@@ -1,13 +1,10 @@
-var express = require('express');
 var url = require('url');
 var crypto = require('crypto');
-
-var router = express.Router();
 
 var TOKEN = 'oYHD3dCTE6ApO4e1NXaTxj1-eNgLe7jQIwSH04DvR6XkoQEdNtKLN0jMMgWDjMbUhrFMRUOu55vU7tPB2y3muu0NIZEjxqD08fr_zH_tpyM';
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+exports.getService = function(req, res, next){
 	var reqObj = url.parse(req.url, true);
 	var params = reqObj['query'];
 	var signature = params['signature'];
@@ -20,13 +17,12 @@ router.get('/', function(req, res, next) {
 	var tmpStr = tmpArr.join('');
 	var shasum = crypto.createHash('sha1');
 	shasum.update(tmpStr);
-	var shaResult = shasum.degest('hex');
+	var shaResult = shasum.digest('hex');
+
 
 	if (shaResult == signature) {
 		res.send(echostr);
 	}else{
 		res.send('not weixin server');
 	}
-});
-
-module.exports = router;
+}
